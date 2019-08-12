@@ -1,0 +1,57 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+		classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2'
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.sonarqube'
+apply plugin: 'jacoco'
+
+bootJar {
+	baseName = 'digitalarts'
+	version =  '0.1.0'
+}
+
+repositories {
+	mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	compile("org.springframework.boot:spring-boot-devtools")
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+	compile('org.apache.commons:commons-lang3:3.8.1')
+	compile('org.json:json:20180813')
+	compile('com.fasterxml.jackson.core:jackson-databind:2.9.8')
+	compile('com.fasterxml.jackson.core:jackson-core:2.9.8')
+	compile('com.fasterxml.jackson.core:jackson-annotations:2.9.8')
+	compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+	compile group: 'info.cukes', name: 'cucumber-core', version: '1.2.5'
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version: '3.14.0'
+
+	testCompile group: 'info.cukes', name: 'cucumber-picocontainer', version: '1.2.5'
+	testCompile("junit:junit")
+	testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.5'
+}
+
+sonarqube {
+    properties {
+        property "sonar.buildbreaker.skip", "false"
+    }
+}
+
