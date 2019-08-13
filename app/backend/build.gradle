@@ -32,7 +32,7 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("org.springframework.boot:spring-boot-devtools")
 	compile("org.springframework.boot:spring-boot-starter-web")
-	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+//	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
 	compile("org.springframework.boot:spring-boot-starter-actuator")
 	compile('org.apache.commons:commons-lang3:3.8.1')
 	compile('org.json:json:20180813')
@@ -43,6 +43,9 @@ dependencies {
 	compile group: 'info.cukes', name: 'cucumber-core', version: '1.2.5'
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version: '3.14.0'
+	compile 'com.google.api-client:google-api-client:1.23.0'
+	compile 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+	compile 'com.google.apis:google-api-services-sheets:v4-rev516-1.23.0'
 
 	testCompile group: 'info.cukes', name: 'cucumber-picocontainer', version: '1.2.5'
 	testCompile("junit:junit")

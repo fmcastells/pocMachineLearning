@@ -5,35 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p>Add Expense</p>
+<p>Chupa Frango!</p>
 <ul>
-    <form action="/create/expense" method="get">
-        <li>Select User</li>
-        <select size="1" name="names">
-            <tr th:each="name : ${names}">
-                <option th:text="${name}"></option>
+    <form action="/bet" method="get">
+        <li>Select Game</li>
+        <select size="1" name="games">
+            <tr th:each="game : ${games}">
+                <option th:text="${game}"></option>
             </tr>
         </select>
-        <a href="/add/user">(Add New User)</a>
-        <li>Select Category</li>
-        <select size="1" name="categories">
-            <tr th:each="category : ${categories}">
-                <option th:text="${category}"></option>
-            </tr>
-        </select>
-        <a href="/add/category">(Add New Category)</a>
-        <li>Select Expense</li>
-        <select size="1" name="expenses">
-            <tr th:each="expense : ${expenses}">
-                <option th:text="${expense}"></option>
-            </tr>
-        </select>
-        <a href="/add/expense">(Add New Expense)</a>
-        <li>Add value</li>
-        <input name='value' value=''>
         <input type="submit" value="Submit">
     </form>
 </ul>
-<p><a href="/show/expenses">Show Expenses</a></p>
 </body>
 </html>
