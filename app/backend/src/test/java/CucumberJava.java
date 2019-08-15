@@ -47,7 +47,7 @@ public class CucumberJava {
 
   @Then("^A field called password should exist$")
   public void loginButton() {
-    Assert.assertTrue(driver.findElement(By.name("password")).isEnabled());
+    Assert.assertTrue(driver.findElement(By.name("Name")).isEnabled());
   }
 
 }
